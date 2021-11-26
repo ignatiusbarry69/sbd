@@ -28,11 +28,9 @@ function createFDA($data){
 
 function deleteFDA($id) {
     global $conn;
-    // mysqli_query($conn, "DELETE FROM fda WHERE idFDA = $id");
-    // return mysqli_affected_rows($conn);
-    $conn ->query("delete from diskon where id_diskon = '".$_GET['id']."' ") ; 
-    $cek = mysqli_affected_rows($conn);
-    return $cek;
+    mysqli_query($conn, "DELETE FROM fda WHERE idFDA = '".$id."' ");
+    return mysqli_affected_rows($conn);
 }
+
 
 ?>
