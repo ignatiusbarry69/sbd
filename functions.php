@@ -32,5 +32,19 @@ function deleteFDA($id) {
     return mysqli_affected_rows($conn);
 }
 
+function updateFDA($data) {
+    global $conn;
+    $idFDA = htmlspecialchars($data["idFDA"]);
+    $namaFDA = htmlspecialchars($data["namaFDA"]);
+    $target = $data["target"];
 
+    $query = "UPDATE fda SET
+                idFDA = '$idFDA',
+                namaFDA = '$namaFDA'
+                WHERE idFDA = '$target'
+                ";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
 ?>

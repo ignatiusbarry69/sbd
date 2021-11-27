@@ -34,8 +34,8 @@ $fda = query("SELECT * FROM fda");
         <td><?= $row["idFDA"]; ?></td>
         <td><?= $row["namaFDA"]; ?></td>
         <td>
-            <a href="">update</a> |
-            <a href="fdadelete.php?id=<?= $row["idFDA"]; ?>">delete</a>
+            <a href="fdaupdate.php?idFDA=<?= $row["idFDA"]; ?>">update</a> |
+            <a href="fdadelete.php?idFDA=<?= $row["idFDA"]; ?>"onclick="return confirm('are you sure?');">delete</a>
         </td>
     <?php $i ++ ?>    
     </tr>

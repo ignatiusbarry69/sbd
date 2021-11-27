@@ -1,19 +1,19 @@
 <?php
 require 'functions.php';
 
-$id = $_GET["id"];
+$id = $_GET["idFDA"];
 
 if( deleteFDA($id) > 0) {
     echo "
         <script>
-            alert('data berhasil dihapus');
+            alert('data berhasil didelete');
             document.location.href = 'fdatabel.php';
         </script>
     ";
 } else {
     echo "
         <script>
-            alert('data gagal dihapus');
+            alert('data gagal didelete');
             document.location.href = 'fdatabel.php';
         </script>
     ";
