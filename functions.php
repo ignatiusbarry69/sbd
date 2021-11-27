@@ -88,4 +88,78 @@ function updateKamar($data) {
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+
+function createPemesan($data){
+    global $conn;
+    $namaPemesan = htmlspecialchars($data["namaPemesan"]);
+    $contactPemesan = htmlspecialchars($data["contactPemesan"]);
+
+    $query = "INSERT INTO pemesan VALUES
+                ('','$namaPemesan','$contactPemesan')";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deletePemesan($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM pemesan WHERE idPemesan = '".$id."' ");
+    return mysqli_affected_rows($conn);
+}
+
+
+function updatePemesan($data) {
+    global $conn;
+    $namaPemesan = htmlspecialchars($data["namaPemesan"]);
+    $contactPemesan = htmlspecialchars($data["contactPemesan"]);
+    $target = $data["target"];
+
+    $query = "UPDATE pemesan SET
+                namaPemesan = '$namaPemesan',
+                contactPemesan = '$contactPemesan'
+                WHERE idPemesan = '$target'
+                ";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function createHotel($data){
+    global $conn;
+    $alamatHotel = htmlspecialchars($data["alamatHotel"]);
+    $namaHotel = htmlspecialchars($data["namaHotel"]);
+
+    $query = "INSERT INTO hotel VALUES
+                ('$alamatHotel','$namaHotel')";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteHotel($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM hotel WHERE alamatHotel = '".$id."' ");
+    return mysqli_affected_rows($conn);
+}
+
+
+function updateHotel($data) {
+    global $conn;
+    $alamatHotel = htmlspecialchars($data["alamatHotel"]);
+    $namaHotel = htmlspecialchars($data["namaHotel"]);
+    $target = $data["target"];
+
+    $query = "UPDATE hotel SET
+                alamatHotel = '$alamatHotel',
+                namaHotel = '$namaHotel'
+                WHERE alamatHotel = '$target'
+                ";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
 ?>

@@ -13,6 +13,12 @@
         <li>
             <a href="kamartabel.php">Tabel KAMAR</a>
         </li>
+        <li>
+            <a href="pemesantabel.php">Tabel PEMESAN</a>
+        </li>
+        <li>
+            <a href="hoteltabel.php">Tabel HOTEL</a>
+        </li>
     </ul>
 
 
