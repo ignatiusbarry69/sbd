@@ -50,7 +50,7 @@ elseif( isset($_GET["back"])){
                 <input type="text" name="namaFDA" id="namaFDA"required value="<?= $updt["namaFDA"]; ?>">
             </li>
             <li>
-                <button type="submit" name="submit">Update</button>
+                <button type="submit" name="submit"onclick="return confirm('are you sure?');">Update</button>
             </li>
         </ul>
     </form>

@@ -32,6 +32,7 @@ function deleteFDA($id) {
     return mysqli_affected_rows($conn);
 }
 
+
 function updateFDA($data) {
     global $conn;
     $idFDA = htmlspecialchars($data["idFDA"]);
@@ -42,6 +43,46 @@ function updateFDA($data) {
                 idFDA = '$idFDA',
                 namaFDA = '$namaFDA'
                 WHERE idFDA = '$target'
+                ";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function createKamar($data){
+    global $conn;
+    $noKamar = htmlspecialchars($data["noKamar"]);
+    $jenisKamar = htmlspecialchars($data["jenisKamar"]);
+    $hargaKamar = htmlspecialchars($data["hargaKamar"]);
+
+    $query = "INSERT INTO kamar VALUES
+                ('$noKamar','$jenisKamar','$hargaKamar')";
+
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
+
+function deleteKamar($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM kamar WHERE noKamar = '".$id."' ");
+    return mysqli_affected_rows($conn);
+}
+
+
+function updateKamar($data) {
+    global $conn;
+    $noKamar = htmlspecialchars($data["noKamar"]);
+    $jenisKamar = htmlspecialchars($data["jenisKamar"]);
+    $hargaKamar = htmlspecialchars($data["hargaKamar"]);
+    $target = $data["target"];
+
+    $query = "UPDATE kamar SET
+                noKamar = '$noKamar',
+                jenisKamar = '$jenisKamar',
+                hargaKamar = '$hargaKamar'
+                WHERE noKamar = '$target'
                 ";
 
     mysqli_query($conn, $query);

@@ -10,6 +10,9 @@
         <li>
             <a href="fdatabel.php">Tabel FDA</a>
         </li>
+        <li>
+            <a href="kamartabel.php">Tabel KAMAR</a>
+        </li>
     </ul>
 
 

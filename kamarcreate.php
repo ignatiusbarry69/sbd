@@ -3,18 +3,18 @@
 require 'functions.php';
 
 if( isset($_POST["submit"])){
-    if (createFDA($_POST) > 0) {
+    if (createKamar($_POST) > 0) {
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'fdatabel.php';
+                document.location.href = 'kamartabel.php';
             </script>
         ";
     } else {
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'fdatabel.php';
+                document.location.href = 'kamartabel.php';
             </script>
         ";
     }
@@ -22,7 +22,7 @@ if( isset($_POST["submit"])){
 elseif( isset($_GET["back"])){
     echo "
             <script>
-                document.location.href = 'fdatabel.php';
+                document.location.href = 'kamartabel.php';
             </script>
         ";
 }
@@ -33,16 +33,20 @@ elseif( isset($_GET["back"])){
     <title>Create</title>
 </head>
 <body>
-    <h1>Create data fda</h1>
+    <h1>Create data kamar</h1>
     <form action="" method="post">
         <ul>
             <li>
-                <label for="idFDA">idFDA : </label>
-                <input type="text" name="idFDA" id="idFDA"required>
+                <label for="noKamar">noKamar : </label>
+                <input type="text" name="noKamar" id="noKamar"required>
             </li>
             <li>
-                <label for="namaFDA">namaFDA : </label>
-                <input type="text" name="namaFDA" id="namaFDA"required>
+                <label for="jenisKamar">jenisKamar : </label>
+                <input type="text" name="jenisKamar" id="jenisKamar"required>
+            </li>
+            <li>
+                <label for="hargaKamar">hargaKamar : </label>
+                <input type="text" name="hargaKamar" id="hargaKamar"required>
             </li>
             <li>
                 <button type="submit" name="submit">Create</button>
