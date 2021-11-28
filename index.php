@@ -19,6 +19,12 @@
         <li>
             <a href="hoteltabel.php">Tabel HOTEL</a>
         </li>
+        <li>
+            <a href="pemesanantabel.php">Tabel PEMESANAN</a>
+        </li>
+        <li>
+            <a href="audittabel.php">Tabel AUDIT</a>
+        </li>
     </ul>
 
 
