@@ -47,7 +47,8 @@ if( isset($_GET["back"])){
         <td><?= $row["alamatHotel"]; ?></td>
         <td>
             <a href="pemesananupdate.php?idBooking=<?= $row["idBooking"]; ?>">update</a> |
-            <a href="pemesanandelete.php?idBooking=<?= $row["idBooking"]; ?>"onclick="return confirm('are you sure?');">delete</a>
+            <a href="pemesanandelete.php?idBooking=<?= $row["idBooking"]; ?>"onclick="return confirm('are you sure?');">delete</a> |
+            <a href="pemesanan1cetak.php?idBooking=<?= $row["idBooking"]; ?>">cetak</a>
         </td>
     <?php $i ++ ?>    
     </tr>
