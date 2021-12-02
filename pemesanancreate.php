@@ -9,13 +9,13 @@ if( isset($_POST["submit"])){
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'pemesanantabel.php';
+                document.location.href = 'auditcreate.php';
             </script>
         ";
     } else {
         echo "
             <script>
-                alert('data berhasil ditambahkan');
+                alert('data gagal ditambahkan');
                 document.location.href = 'pemesanantabel.php';
             </script>
         ";
