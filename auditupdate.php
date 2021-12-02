@@ -7,7 +7,7 @@ $split = explode(",",$id);
 $a = $split[0];
 $b = $split[1];
 
-$updt = query("SELECT * FROM audit WHERE idBooking = '" . mysqli_escape_string($conn,$a) . "' AND noKamar = '" . mysqli_escape_string($conn,$a) . "'");
+$updt = query("SELECT * FROM audit WHERE idBooking = '$a' AND noKamar = '$b'")[0];
 
 if( isset($_POST["submit"])){
     if (updateAudit($_POST) > 0) {
@@ -53,7 +53,8 @@ elseif( isset($_GET["back"])){
                 <select name="idBooking"required value="<?= $a; ?>">
                 
                 <?php
-                    echo"<option value ='' >--------------</option>";
+                    $current = $updt["idBooking"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $audit = $row["idBooking"];
@@ -70,7 +71,8 @@ elseif( isset($_GET["back"])){
                 <select name="noKamar"required value="<?= $b; ?>">
                 
                 <?php
-                    echo"<option value ='' >--------------</option>";
+                    $current = $updt["noKamar"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $pemesan = $row["noKamar"]." - ".$row["jenisKamar"];

@@ -28,6 +28,22 @@ elseif( isset($_GET["back"])){
             </script>
         ";
 }
+elseif( isset($_GET["done"])){
+    if (createAudit($_POST) > 0) {
+        echo "
+            <script>
+                document.location.href = 'audittabel.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('data gagal ditambahkan');
+                document.location.href = 'audittabel.php';
+            </script>
+        ";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +60,7 @@ elseif( isset($_GET["back"])){
                 <?php 
                 $data = mysqli_query($conn, "SELECT * FROM pemesanan");
                 ?>
-                <!-- <select name="idBooking"> -->
+                
                 
                 <?php
                     // echo"<option value ='' >--------------</option>";
@@ -55,7 +71,7 @@ elseif( isset($_GET["back"])){
                     }    
                 ?>
                 <label for="idBooking">idBooking :<?=$audit;?> </label> 
-                </select>
+
             </li>
             <li>
                 <label for="noKamar">noKamar : </label>
@@ -84,9 +100,11 @@ elseif( isset($_GET["back"])){
                 <input type="date" name="checkOut" id="checkOut"required>
             </li>
             <li>
-                <button type="submit" name="submit">Create</button>
+                <button type="submit" name="submit">Create</button> |
+                <button type="submit" name="done">Done</button>
             </li>
         </ul>
+        <input type="hidden" name="idBooking" value="<?= $audit;?>">
     </form>
 
     <form action="" method="get">
