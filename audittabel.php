@@ -22,8 +22,8 @@ if( isset($_GET["back"])){
 
 <h1>TABEL AUDIT</h1>
 
-<a href="auditcreate.php"><button>Tambah data audit</button></a>
-<br><br>
+<!-- <a href="auditcreate.php"><button>Tambah data audit</button></a>
+<br><br> -->
 
 <table border="1" cellpadding="10" cellspacing="0"> 
     <tr>

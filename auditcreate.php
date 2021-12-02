@@ -9,7 +9,7 @@ if( isset($_POST["submit"])){
         echo "
             <script>
                 alert('data berhasil ditambahkan');
-                document.location.href = 'audittabel.php';
+                document.location.href = 'auditcreate.php';
             </script>
         ";
     } else {
@@ -35,25 +35,26 @@ elseif( isset($_GET["back"])){
     <title>Create</title>
 </head>
 <body>
-    <h1>Create data pemesanan</h1>
+    <h1>Create data audit</h1>
 
     <form action="" method="post">
         <ul>
             <li>
-                <label for="idBooking">idBooking : </label>
+                
                 <?php 
                 $data = mysqli_query($conn, "SELECT * FROM pemesanan");
                 ?>
-                <select name="idBooking">
+                <!-- <select name="idBooking"> -->
                 
                 <?php
-                    echo"<option value ='' >--------------</option>";
+                    // echo"<option value ='' >--------------</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $audit = $row["idBooking"];
-                    echo"<option value ='$audit'>$audit</option>";
-                    } 
-                ?> 
+                    // echo"<option value ='$audit'>$audit</option>";
+                    }    
+                ?>
+                <label for="idBooking">idBooking :<?=$audit;?> </label> 
                 </select>
             </li>
             <li>
