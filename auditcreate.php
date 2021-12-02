@@ -82,7 +82,8 @@ if( isset($_POST["done"])){
                 <select name="noKamar">
                 
                 <?php
-                    echo"<option value ='' >--------------</option>";
+                    $current = $updt["noKamar"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $pemesan = $row["noKamar"]." - ".$row["jenisKamar"];
