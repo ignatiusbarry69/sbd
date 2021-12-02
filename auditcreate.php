@@ -28,10 +28,11 @@ elseif( isset($_GET["back"])){
             </script>
         ";
 }
-elseif( isset($_GET["done"])){
+if( isset($_POST["done"])){
     if (createAudit($_POST) > 0) {
         echo "
             <script>
+                alert('data berhasil ditambahkan');
                 document.location.href = 'audittabel.php';
             </script>
         ";
@@ -101,7 +102,7 @@ elseif( isset($_GET["done"])){
             </li>
             <li>
                 <button type="submit" name="submit">Create</button> |
-                <button type="submit" name="done">Done</button>
+                <button type="done" name="done">Done</button>
             </li>
         </ul>
         <input type="hidden" name="idBooking" value="<?= $audit;?>">

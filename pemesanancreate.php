@@ -51,7 +51,8 @@ elseif( isset($_GET["back"])){
                 <select name="idPemesan"required>
                 
                 <?php
-                    echo"<option value ='' >-----------------</option>";
+                    $current = $updt["idPemesan"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $pemesan = $row["idPemesan"]." - ".$row["namaPemesan"];
@@ -69,7 +70,8 @@ elseif( isset($_GET["back"])){
                 <select name="idFDA"required>
                 
                 <?php
-                    echo"<option value ='' >-----------------</option>";
+                    $current = $updt["idFDA"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $fda = $row["idFDA"]." - ".$row["namaFDA"];
@@ -86,7 +88,8 @@ elseif( isset($_GET["back"])){
                 <select name="alamatHotel"required>
                 
                 <?php
-                    echo"<option value ='' >-------------------------------------------</option>";
+                    $current = $updt["alamatHotel"];
+                    echo"<option value ='$current' >$current</option>";
                     while ($row =  mysqli_fetch_assoc($data))
                     {
                     $hotel = $row["alamatHotel"];
