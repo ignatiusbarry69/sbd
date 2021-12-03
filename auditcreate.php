@@ -102,7 +102,7 @@ if( isset($_POST["done"])){
                 <input type="date" name="checkOut" id="checkOut"required>
             </li>
             <li>
-                <button type="submit" name="submit">Create</button> |
+                <button type="submit" name="submit">Add</button> |
                 <button type="done" name="done">Done</button>
             </li>
         </ul>
