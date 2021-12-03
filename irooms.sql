@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2021 at 08:24 AM
+-- Generation Time: Dec 03, 2021 at 05:16 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.22
 
@@ -40,9 +40,17 @@ CREATE TABLE `audit` (
 
 INSERT INTO `audit` (`idBooking`, `noKamar`, `checkIn`, `checkOut`) VALUES
 ('V2RR5015', 101, '2021-08-07', '2021-08-08'),
-('V2RR5015', 112, '2021-08-28', '2021-08-31'),
+('V2RR5015', 108, '2021-08-28', '2021-08-31'),
+('V2RR5015', 113, '2021-09-09', '2021-09-15'),
 ('V2RR5024', 113, '2021-09-28', '2021-10-05'),
-('V2RR5030', 108, '2021-09-01', '2021-09-03');
+('V2RR5030', 108, '2021-09-01', '2021-09-03'),
+('V2RR5090', 123, '2021-10-07', '2021-10-11'),
+('V2RR5096', 123, '2021-11-02', '2021-11-09'),
+('V2RR5097', 112, '2021-11-25', '2021-11-26'),
+('V2RR5097', 113, '2021-12-02', '2021-12-04'),
+('V2RR5099', 108, '2021-12-22', '2021-12-24'),
+('V2RR5100', 101, '2021-12-28', '2021-12-29'),
+('V2RR5100', 113, '2021-12-28', '2021-12-29');
 
 -- --------------------------------------------------------
 
@@ -61,11 +69,10 @@ CREATE TABLE `fda` (
 
 INSERT INTO `fda` (`idFDA`, `namaFDA`) VALUES
 ('P01', 'Rina'),
-('P02', 'Joni'),
+('P02', 'Jonny'),
 ('P03', 'Maria'),
 ('P04', 'Rizal'),
-('P05', 'Rendy'),
-('P06', 'Cici');
+('P08', 'Rendy');
 
 -- --------------------------------------------------------
 
@@ -105,7 +112,8 @@ INSERT INTO `kamar` (`noKamar`, `jenisKamar`, `hargaKamar`) VALUES
 (101, 'double', 77000),
 (108, 'double', 77000),
 (112, 'twin', 80000),
-(113, 'single', 64000);
+(113, 'single', 64000),
+(123, 'single', 64000);
 
 -- --------------------------------------------------------
 
@@ -126,7 +134,9 @@ CREATE TABLE `pemesan` (
 INSERT INTO `pemesan` (`idPemesan`, `namaPemesan`, `contactPemesan`) VALUES
 (1, 'Barry', '08990625075'),
 (2, 'Yolanda', '08267456661'),
-(3, 'MinHan', '08113415677');
+(3, 'MinHan', '08113415677'),
+(6, 'Kenji', '06678182888'),
+(7, 'Juan', '06667991023');
 
 -- --------------------------------------------------------
 
@@ -148,7 +158,12 @@ CREATE TABLE `pemesanan` (
 INSERT INTO `pemesanan` (`idBooking`, `idPemesan`, `idFDA`, `alamatHotel`) VALUES
 ('V2RR5015', 1, 'P01', 'No. 10, Candi Winangun, Sleman'),
 ('V2RR5024', 3, 'P02', 'No. 10, Candi Winangun, Sleman'),
-('V2RR5030', 2, 'P04', 'No. 10, Candi Winangun, Sleman');
+('V2RR5030', 2, 'P04', 'No. 10, Candi Winangun, Sleman'),
+('V2RR5090', 3, 'P04', 'No. 10, Candi Winangun, Sleman'),
+('V2RR5096', 7, 'P08', 'No. 10, Candi Winangun, Sleman'),
+('V2RR5097', 6, 'P03', 'No. 10, Candi Winangun, Sleman'),
+('V2RR5099', 3, 'P04', 'No. 10, Candi Winangun, Sleman'),
+('V2RR5100', 1, 'P01', 'No. 10, Candi Winangun, Sleman');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +217,7 @@ ALTER TABLE `pemesanan`
 -- AUTO_INCREMENT for table `pemesan`
 --
 ALTER TABLE `pemesan`
-  MODIFY `idPemesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPemesan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
